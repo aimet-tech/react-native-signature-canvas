@@ -367,10 +367,9 @@ export default `
           }
       };
       SignaturePad.prototype._handlePointerEvents = function () {
-          this._mouseButtonDown = false;
-          this.canvas.addEventListener('pointerdown', this._handleMouseDown);
-          this.canvas.addEventListener('pointermove', this._handleMouseMove);
-          document.addEventListener('pointerup', this._handleMouseUp);
+        this.canvas.addEventListener('touchstart', this._handleTouchStart);
+        this.canvas.addEventListener('touchmove', this._handleTouchMove);
+        this.canvas.addEventListener('touchend', this._handleTouchEnd);
       };
       SignaturePad.prototype._handleMouseEvents = function () {
           this._mouseButtonDown = false;
